@@ -14,7 +14,7 @@ var Token = function(token){
 
     this.criar = function(callback){        
         var token = Guid.raw();
-        var query = "INSERT INTO `CMS-API`.token (token) VALUES ('" + token + "');";
+        var query = "INSERT INTO `pi_backend`.token (token) VALUES ('" + token + "');";
         db.cnn.exec(query, function(rows, err ){
             if(err !== undefined && err !== null){
                 callback.call(null, {erro: true, mensagem: err.message});
@@ -27,7 +27,7 @@ var Token = function(token){
 };
 
 Token.verificaToken = function(token, callback){
-    var query = "select * from `CMS-API`.token where  token = '" + token + "';";
+    var query = "select * from `pi_backend`.token where  token = '" + token + "';";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
@@ -43,7 +43,7 @@ Token.verificaToken = function(token, callback){
 };
 
 Token.apagarToken = function(token, callback){
-    var query = "delete from `CMS-API`.token where  token = '" + token + "';";
+    var query = "delete from `pi_backend`.token where  token = '" + token + "';";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             if(callback !== undefined){

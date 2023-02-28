@@ -37,7 +37,7 @@ var Tutor = function(tutor){
         var query = "";
         if(this.id == 0 || this.id == "" || this.id == undefined){
             
-            query = "INSERT INTO `CMS-API`.tutores (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
+            query = "INSERT INTO `pi_backend`.tutores (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
 
             db.cnn.exec(query, function(rows, err ){
                 if(err !== undefined && err !== null){
@@ -49,7 +49,7 @@ var Tutor = function(tutor){
             });
         }
         else {
-            query = "UPDATE `cms-api`.tutores SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
+            query = "UPDATE `pi_backend`.tutores SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
             db.cnn.exec(query, function(rows, err ){
                 if(err !== undefined && err !== null){
                     callback.call(null, {erro: true, mensagem: err.message});
@@ -76,7 +76,7 @@ Tutor.excluirTodos = function(callback){
 };
 
 Tutor.truncateTable = function(callback){
-    query = "truncate `cms-api`.tutores";
+    query = "truncate `pi_backend`.tutores";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {erro: true, mensagem: err.message});
@@ -153,7 +153,7 @@ Tutor.excluirPorId = function(id, callback){
 };
 
 Tutor.buscaPorNome = function(nome, callback){
-    query = "SELECT * FROM `cms-api`.tutores where nome like '%" + nome + "%';";
+    query = "SELECT * FROM `pi_backend`.tutores where nome like '%" + nome + "%';";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
