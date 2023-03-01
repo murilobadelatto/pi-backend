@@ -37,7 +37,11 @@ var Tutor = function(tutor){
         var query = "";
         if(this.id == 0 || this.id == "" || this.id == undefined){
             
+<<<<<<< HEAD
             query = "INSERT INTO `pi_backend`.Tutores (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
+=======
+            query = "INSERT INTO `CMS-API`.tutores (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
+>>>>>>> parent of 142f138 (consertando erros da aplicação)
 
             db.cnn.exec(query, function(rows, err ){
                 if(err !== undefined && err !== null){
@@ -49,7 +53,11 @@ var Tutor = function(tutor){
             });
         }
         else {
+<<<<<<< HEAD
             query = "UPDATE `pi_backend`.Tutores SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
+=======
+            query = "UPDATE `cms-api`.tutores SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
+>>>>>>> parent of 142f138 (consertando erros da aplicação)
             db.cnn.exec(query, function(rows, err ){
                 if(err !== undefined && err !== null){
                     callback.call(null, {erro: true, mensagem: err.message});
@@ -76,7 +84,11 @@ Tutor.excluirTodos = function(callback){
 };
 
 Tutor.truncateTable = function(callback){
+<<<<<<< HEAD
     query = "truncate `pi_backend`.Tutores";
+=======
+    query = "truncate `cms-api`.tutores";
+>>>>>>> parent of 142f138 (consertando erros da aplicação)
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {erro: true, mensagem: err.message});
@@ -153,7 +165,11 @@ Tutor.excluirPorId = function(id, callback){
 };
 
 Tutor.buscaPorNome = function(nome, callback){
+<<<<<<< HEAD
     query = "SELECT * FROM `pi_backend`.Tutores where nome like '%" + nome + "%';";
+=======
+    query = "SELECT * FROM `cms-api`.tutores where nome like '%" + nome + "%';";
+>>>>>>> parent of 142f138 (consertando erros da aplicação)
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
