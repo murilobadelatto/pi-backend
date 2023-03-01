@@ -36,21 +36,7 @@ var Tutor = function(tutor){
 
         var query = "";
         if(this.id == 0 || this.id == "" || this.id == undefined){
-            
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             query = "INSERT INTO `pi_backend`.Tutores (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
-=======
-            query = "INSERT INTO `CMS-API`.tutores (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
->>>>>>> parent of 142f138 (consertando erros da aplicação)
-=======
-            query = "INSERT INTO `pi_backend`.tutores (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
->>>>>>> parent of ffff00e (arrumando nomes das tabelas)
-=======
-            query = "INSERT INTO `pi_backend`.Tutores (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
->>>>>>> parent of 317e8e4 (inserindo mudanca dos nome tabelas)
-
             db.cnn.exec(query, function(rows, err ){
                 if(err !== undefined && err !== null){
                     callback.call(null, {erro: true, mensagem: err.message});
@@ -61,19 +47,7 @@ var Tutor = function(tutor){
             });
         }
         else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             query = "UPDATE `pi_backend`.Tutores SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
-=======
-            query = "UPDATE `cms-api`.tutores SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
->>>>>>> parent of 142f138 (consertando erros da aplicação)
-=======
-            query = "UPDATE `pi_backend`.tutores SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
->>>>>>> parent of ffff00e (arrumando nomes das tabelas)
-=======
-            query = "UPDATE `pi_backend`.Tutores SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
->>>>>>> parent of 317e8e4 (inserindo mudanca dos nome tabelas)
             db.cnn.exec(query, function(rows, err ){
                 if(err !== undefined && err !== null){
                     callback.call(null, {erro: true, mensagem: err.message});
@@ -100,19 +74,7 @@ Tutor.excluirTodos = function(callback){
 };
 
 Tutor.truncateTable = function(callback){
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     query = "truncate `pi_backend`.Tutores";
-=======
-    query = "truncate `cms-api`.tutores";
->>>>>>> parent of 142f138 (consertando erros da aplicação)
-=======
-    query = "truncate `pi_backend`.tutores";
->>>>>>> parent of ffff00e (arrumando nomes das tabelas)
-=======
-    query = "truncate `pi_backend`.Tutores";
->>>>>>> parent of 317e8e4 (inserindo mudanca dos nome tabelas)
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {erro: true, mensagem: err.message});
@@ -189,19 +151,7 @@ Tutor.excluirPorId = function(id, callback){
 };
 
 Tutor.buscaPorNome = function(nome, callback){
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     query = "SELECT * FROM `pi_backend`.Tutores where nome like '%" + nome + "%';";
-=======
-    query = "SELECT * FROM `cms-api`.tutores where nome like '%" + nome + "%';";
->>>>>>> parent of 142f138 (consertando erros da aplicação)
-=======
-    query = "SELECT * FROM `pi_backend`.tutores where nome like '%" + nome + "%';";
->>>>>>> parent of ffff00e (arrumando nomes das tabelas)
-=======
-    query = "SELECT * FROM `pi_backend`.Tutores where nome like '%" + nome + "%';";
->>>>>>> parent of 317e8e4 (inserindo mudanca dos nome tabelas)
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
