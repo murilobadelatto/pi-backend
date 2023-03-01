@@ -15,14 +15,10 @@ var Token = function(token){
     this.criar = function(callback){        
         var token = Guid.raw();
 <<<<<<< HEAD
-<<<<<<< HEAD
         var query = "INSERT INTO `pi_backend`.Token (token) VALUES ('" + token + "');";
 =======
         var query = "INSERT INTO `CMS-API`.token (token) VALUES ('" + token + "');";
 >>>>>>> parent of 142f138 (consertando erros da aplicação)
-=======
-        var query = "INSERT INTO `pi_backend`.token (token) VALUES ('" + token + "');";
->>>>>>> parent of ffff00e (arrumando nomes das tabelas)
         db.cnn.exec(query, function(rows, err ){
             if(err !== undefined && err !== null){
                 callback.call(null, {erro: true, mensagem: err.message});
@@ -36,14 +32,10 @@ var Token = function(token){
 
 Token.verificaToken = function(token, callback){
 <<<<<<< HEAD
-<<<<<<< HEAD
     var query = "select * from `pi_backend`.Token where  token = '" + token + "';";
 =======
     var query = "select * from `CMS-API`.token where  token = '" + token + "';";
 >>>>>>> parent of 142f138 (consertando erros da aplicação)
-=======
-    var query = "select * from `pi_backend`.token where  token = '" + token + "';";
->>>>>>> parent of ffff00e (arrumando nomes das tabelas)
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
@@ -60,14 +52,10 @@ Token.verificaToken = function(token, callback){
 
 Token.apagarToken = function(token, callback){
 <<<<<<< HEAD
-<<<<<<< HEAD
     var query = "delete from `pi_backend`.Token where  token = '" + token + "';";
 =======
     var query = "delete from `CMS-API`.token where  token = '" + token + "';";
 >>>>>>> parent of 142f138 (consertando erros da aplicação)
-=======
-    var query = "delete from `pi_backend`.token where  token = '" + token + "';";
->>>>>>> parent of ffff00e (arrumando nomes das tabelas)
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             if(callback !== undefined){
