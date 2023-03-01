@@ -37,11 +37,7 @@ var Usuario = function(usuario){
         var query = "";
         if(this.id == 0 || this.id == "" || this.id == undefined){
             
-<<<<<<< HEAD
             query = "INSERT INTO `pi_backend`.Usuarios (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
-=======
-            query = "INSERT INTO `CMS-API`.usuarios (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
->>>>>>> parent of 142f138 (consertando erros da aplicação)
 
             db.cnn.exec(query, function(rows, err ){
                 if(err !== undefined && err !== null){
@@ -53,11 +49,7 @@ var Usuario = function(usuario){
             });
         }
         else {
-<<<<<<< HEAD
             query = "UPDATE `pi_backend`.Usuarios SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
-=======
-            query = "UPDATE `cms-api`.usuarios SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
->>>>>>> parent of 142f138 (consertando erros da aplicação)
             db.cnn.exec(query, function(rows, err ){
                 if(err !== undefined && err !== null){
                     callback.call(null, {erro: true, mensagem: err.message});
@@ -71,7 +63,7 @@ var Usuario = function(usuario){
 };
 
 Usuario.excluirTodos = function(callback){
-    query = "delete from Usuarios";
+    query = "delete from usuarios";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {erro: true, mensagem: err.message});
@@ -84,11 +76,7 @@ Usuario.excluirTodos = function(callback){
 };
 
 Usuario.truncateTable = function(callback){
-<<<<<<< HEAD
     query = "truncate `pi_backend`.Usuarios";
-=======
-    query = "truncate `cms-api`.usuarios";
->>>>>>> parent of 142f138 (consertando erros da aplicação)
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {erro: true, mensagem: err.message});
@@ -101,7 +89,7 @@ Usuario.truncateTable = function(callback){
 };
 
 Usuario.todos = function(callback){
-    query = "select * from Usuarios";
+    query = "select * from usuarios";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
@@ -120,7 +108,7 @@ Usuario.todos = function(callback){
 };
 
 Usuario.buscaPorId = function(id, callback){
-    query = "select * from Usuarios where id = " + id + ";";
+    query = "select * from usuarios where id = " + id + ";";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
@@ -147,7 +135,7 @@ Usuario.buscaPorId = function(id, callback){
 };
 
 Usuario.excluirPorId = function(id, callback){
-    query = "delete from Usuarios where id = " + id + ";";
+    query = "delete from usuarios where id = " + id + ";";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
@@ -165,11 +153,7 @@ Usuario.excluirPorId = function(id, callback){
 };
 
 Usuario.buscaPorNome = function(nome, callback){
-<<<<<<< HEAD
     query = "SELECT * FROM `pi_backend`.Usuarios where nome like '%" + nome + "%';";
-=======
-    query = "SELECT * FROM `cms-api`.usuarios where nome like '%" + nome + "%';";
->>>>>>> parent of 142f138 (consertando erros da aplicação)
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
