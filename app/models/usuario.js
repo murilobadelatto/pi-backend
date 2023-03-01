@@ -37,7 +37,7 @@ var Usuario = function(usuario){
         var query = "";
         if(this.id == 0 || this.id == "" || this.id == undefined){
             
-            query = "INSERT INTO `pi_backend`.usuarios (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
+            query = "INSERT INTO `pi_backend`.Usuarios (nome, login, senha, email) VALUES ('" + this.nome + "', '" + this.login + "', '" + this.senha + "', '" + this.email + "');";
 
             db.cnn.exec(query, function(rows, err ){
                 if(err !== undefined && err !== null){
@@ -49,7 +49,7 @@ var Usuario = function(usuario){
             });
         }
         else {
-            query = "UPDATE `pi_backend`.usuarios SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
+            query = "UPDATE `pi_backend`.Usuarios SET nome = '" + this.nome + "', login = '" + this.login + "', senha = '" + this.senha + "', email = '" + this.email + "' WHERE (id = '" + this.id + "');";
             db.cnn.exec(query, function(rows, err ){
                 if(err !== undefined && err !== null){
                     callback.call(null, {erro: true, mensagem: err.message});
@@ -63,7 +63,7 @@ var Usuario = function(usuario){
 };
 
 Usuario.excluirTodos = function(callback){
-    query = "delete from usuarios";
+    query = "delete from Usuarios";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {erro: true, mensagem: err.message});
@@ -76,7 +76,7 @@ Usuario.excluirTodos = function(callback){
 };
 
 Usuario.truncateTable = function(callback){
-    query = "truncate `pi_backend`.usuarios";
+    query = "truncate `pi_backend`.Usuarios";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {erro: true, mensagem: err.message});
@@ -89,7 +89,7 @@ Usuario.truncateTable = function(callback){
 };
 
 Usuario.todos = function(callback){
-    query = "select * from usuarios";
+    query = "select * from Usuarios";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
@@ -108,7 +108,7 @@ Usuario.todos = function(callback){
 };
 
 Usuario.buscaPorId = function(id, callback){
-    query = "select * from usuarios where id = " + id + ";";
+    query = "select * from Usuarios where id = " + id + ";";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
@@ -135,7 +135,7 @@ Usuario.buscaPorId = function(id, callback){
 };
 
 Usuario.excluirPorId = function(id, callback){
-    query = "delete from usuarios where id = " + id + ";";
+    query = "delete from Usuarios where id = " + id + ";";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
@@ -153,7 +153,7 @@ Usuario.excluirPorId = function(id, callback){
 };
 
 Usuario.buscaPorNome = function(nome, callback){
-    query = "SELECT * FROM `pi_backend`.usuarios where nome like '%" + nome + "%';";
+    query = "SELECT * FROM `pi_backend`.Usuarios where nome like '%" + nome + "%';";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
