@@ -87,7 +87,7 @@ Usuario.truncateTable = function(callback){
 };
 
 Usuario.todos = function(callback){
-    query = "select * from uUsuarios";
+    query = "select * from Usuarios";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {

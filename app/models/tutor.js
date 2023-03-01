@@ -61,7 +61,7 @@ var Tutor = function(tutor){
 };
 
 Tutor.excluirTodos = function(callback){
-    query = "delete from tutores";
+    query = "delete from Tutores";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {erro: true, mensagem: err.message});
@@ -87,7 +87,7 @@ Tutor.truncateTable = function(callback){
 };
 
 Tutor.todos = function(callback){
-    query = "select * from tutores";
+    query = "select * from Tutores";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
@@ -106,7 +106,7 @@ Tutor.todos = function(callback){
 };
 
 Tutor.buscaPorId = function(id, callback){
-    query = "select * from tutores where id = " + id + ";";
+    query = "select * from Tutores where id = " + id + ";";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
@@ -133,7 +133,7 @@ Tutor.buscaPorId = function(id, callback){
 };
 
 Tutor.excluirPorId = function(id, callback){
-    query = "delete from tutores where id = " + id + ";";
+    query = "delete from Tutores where id = " + id + ";";
     db.cnn.exec(query, function(rows, err ){
         if(err !== undefined && err !== null){
             callback.call(null, {
