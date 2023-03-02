@@ -9,7 +9,7 @@ var HomeController = {
         var usuario = new Usuario();  
 
         usuario.id = 1;
-        usuario.nome = "Joao";
+        usuario.nome = "Maria";
         usuario.login = "Joao";
         usuario.senha = 123;
         usuario.email = "Misa.com";      
